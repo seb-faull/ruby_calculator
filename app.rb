@@ -39,6 +39,12 @@ def calculate operation, *numbers
 		when "d"
 			(divide numbers[0], numbers[1]).to_i
 
+		when "p"
+			(power_of numbers[0], numbers[1]).to_i
+
+		when "r"
+			(square_root numbers[0]).to_i
+
 	end
 end
 
@@ -56,7 +62,7 @@ def input_numbers operation
 	end
 end
 
-puts "Do you want to do (a)dd, (s)ubtract, (m)ultiply or (d)ivide?"
+puts "Do you want to (a)dd, (s)ubtract, (m)ultiply, (d)ivide, (p)ower or square (r)oot?"
 operation = gets.chomp
 
 input_numbers operation
