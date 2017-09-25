@@ -1,6 +1,4 @@
-# puts "This is your calculator"
-# puts "Which operator would you like?"
-
+#Operations
 def add num1, num2
 	num1 + num2
 end
@@ -25,6 +23,7 @@ def square_root num1
 	Math.sqrt(num1)
 end
 
+#Different calculation operations
 def calculate operation, *numbers
 	case operation
 		when "a"
@@ -48,6 +47,9 @@ def calculate operation, *numbers
 	end
 end
 
+
+#Get user input for two numbers if they didn't select to Square root.
+	#If they did then they are only asked to input one number
 def input_numbers operation
 	puts "Enter the first number:"
 	num1 = gets.chomp.to_f
@@ -62,47 +64,31 @@ def input_numbers operation
 	end
 end
 
-puts "Do you want to (a)dd, (s)ubtract, (m)ultiply, (d)ivide, (p)ower or square (r)oot?"
-operation = gets.chomp
 
-input_numbers operation
+#Selecting different calculator types
+puts "Do you want to use the (b)asic calculator or (a)dvanced calculator?"
+
+calc_type = gets.chomp
 
 
+if calc_type == "b"
 
-# def operator_choice
-# 	puts "a - addition s - subtraction d - division m - multiplication pow - power of sqr - square root"
-# 	operator = gets.chomp
-# end
+	puts "Do you want to (a)dd, (s)ubtract, (m)ultiply or (d)ivide?"
 
-# def number_choice order
-# 	puts "Choose #{order} number"
-# 	num = gets.chomp.to_f
-# end
+	operation = gets.chomp
 
-# number1 = number_choice "first"
-# number2 = number_choice "second"
-# puts "#{number1} #{number2}"
+	input_numbers operation
+elsif calc_type == "a"
 
-# if operator_choice == "a"
-# 	result = add number1,number2
+	puts "Do you want to (p)ower or square (r)oot?"
 
-# elsif operator_choice == "s"
-# 	result = subtract number1,number2
+	operation = gets.chomp
+	
+	input_numbers operation
 
-# elsif operator_choice == "d"
-# 	result = divide number1,number2
+end
 
-# elsif operator_choice == "m"
-# 	result = multiply number1,number2
 
-# elsif operator_choice == "pow"
-# 	result = power_of number1,number2
-
-# elsif  operator_choice == "sqr"
-# 	result = square_root number1
-# end
-
-# puts result
 
 
 
